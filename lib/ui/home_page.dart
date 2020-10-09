@@ -53,6 +53,11 @@ class _home_pageState extends State<home_page> {
                   border: OutlineInputBorder()),
               style: TextStyle(color: Colors.white, fontSize: 18.0),
               textAlign: TextAlign.center,
+              onSubmitted: (text) {
+                setState(() {
+                  _search = text;
+                });
+              },
             ),
           ),
           Expanded(
@@ -92,7 +97,7 @@ class _home_pageState extends State<home_page> {
         crossAxisSpacing: 10.0,
         mainAxisSpacing: 10.0,
       ),
-      itemCount: snapshot.data['data'].length ,
+      itemCount: snapshot.data['data'].length,
       itemBuilder: (context, index) {
         return GestureDetector(
           child: Image.network(
