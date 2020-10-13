@@ -118,7 +118,11 @@ class _HomePageState extends State<HomePage> {
               height: 300.0,
               fit: BoxFit.cover,
             ),
-           
+             onTap: (){
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => GifPage(snapshot.data["data"][index]))
+                );
+              },
           );
         } else {
           return Container(
